@@ -11,6 +11,8 @@ export class ProductListComponent {
 
   showImage = false;
 
+  listFilter = 'cart';
+
   products: any[] = [
     {
 

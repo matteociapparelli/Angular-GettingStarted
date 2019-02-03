@@ -8,7 +8,7 @@
         Filter by:
       </div>
       <div class='col-md-4'>
-        <input type='text'/>
+        <input type='text' [(ngModel)]='listFilter'/>
       </div>
     </div>
     <div clas='row'>
@@ -42,9 +42,9 @@
                    [style.margin.px]='imageMargin'>
             </td>
             <td>{{ product.productName }}</td>
-            <td>{{ product.productCode }}</td>
+            <td>{{ product.productCode | lowercase }}</td>
             <td>{{ product.releaseDate }}</td>
-            <td>{{ product.price }}</td>
+            <td>{{ product.price | currency | lowercase }}</td>
             <td>{{ product.starRating }}</td>
           </tr>
         </tbody>
