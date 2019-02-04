@@ -99,4 +99,8 @@ performFilter(filterBy: string): IProduct[] {
     this.showImage = !this.showImage;
   }
 
+  onRatingClicked(message: number): void {
+    this.pageTitle = 'Product List ' + message;
+  }
+
 }
