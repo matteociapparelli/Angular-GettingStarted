@@ -1,5 +1,6 @@
-import { RouterModule } from '@angular/router';
-import { WelcomeComponent } from './../../../APM-Final/src/app/home/welcome.component';
+import { ProductDetailGuard } from './products/product-detail-guard.guard';
+import { RouterModule, CanActivate } from '@angular/router';
+import { WelcomeComponent } from './home/welcome.component';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -26,7 +27,10 @@ import { ProductDetailComponent } from 'src/app/products/product-detail.componen
     HttpClientModule,
     RouterModule.forRoot([
       { path: 'products', component: ProductListComponent },
-      { path: 'products/:id', component: ProductDetailComponent },
+      { path: 'products/:id',
+        component: ProductDetailComponent,
+        canActivate: [ProductDetailGuard]
+      },
       { path: 'welcome', component: WelcomeComponent },
       { path: '', redirectTo: 'welcome', pathMatch: 'full' },
       { path: '**', redirectTo: 'welcome', pathMatch: 'full' },
