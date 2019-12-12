@@ -17,7 +17,7 @@ product: IProduct;
   }
 
   ngOnInit() {
-    let id = +this.route.snapshot.paramMap.get('id');
+    const id = +this.route.snapshot.paramMap.get('id');
     this.pageTitle = `${this.pageTitle} - ${id}`;
     this.product = {
       'productId': 1,
